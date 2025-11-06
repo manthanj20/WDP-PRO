@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Purchase - Aman Stationary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Aman Stationary</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">About & Register</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="purchase">
+        <h2 id="title">Purchase</h2>
+        <p id="msg">Processing your request...</p>
+        <div id="summary" class="summary"></div>
+        <a href="products.html" class="back-btn">Back to Products</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 Aman Stationary. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const product = params.get("product") || "Selected item";
+      document.getElementById("title").textContent = "Purchase: " + product;
+      document.getElementById("msg").textContent =
+        "Thank you for choosing " + product + " — this is a  purchase page.";
+      document.getElementById("summary").innerHTML = `
+  <p><strong>Item:</strong> ${product}</p>
+  <p><strong>Price:</strong> ₹99 (sample price)</p>
+  <p><strong>Status:</strong> Order placed </p>
+`;
+    </script>
+  </body>
+</html>
